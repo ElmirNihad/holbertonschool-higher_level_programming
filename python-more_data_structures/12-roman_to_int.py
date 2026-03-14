@@ -9,6 +9,7 @@ def to_subtract(list_num):
 
     return (max_list - to_sub)
 
+
 def roman_to_int(roman_string):
     if not roman_string:
         return 0
@@ -16,7 +17,8 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return 0
 
-    rom_n = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    rom_n = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
+             'C': 100, 'D': 500, 'M': 1000}
 
     list_keys = list(rom_n.keys())
 
@@ -37,4 +39,4 @@ def roman_to_int(roman_string):
 
     num += to_subtract(list_num)
 
-    return (num)
+    return num
