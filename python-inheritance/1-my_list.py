@@ -6,8 +6,8 @@ Define MyList class.
 
 
 class MyList(list):
-    """Define a MyList."""
+    """A class that inherits from list"""
 
     def print_sorted(self):
-        """Print the list sorted"""
+        """Prints the list in ascending sorted order"""
         print(sorted(self))
