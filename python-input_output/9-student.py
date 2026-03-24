@@ -4,17 +4,18 @@
         *If the file doesnt exist, it should be created
 """
 from sys import argv
-from os import path
 from importlib import import_module
+
 save_to_json_file = import_module("5-save_to_json_file").save_to_json_file
 load_from_json_file = import_module("6-load_from_json_file").load_from_json_file
 
 filename = "add_item.json"
+
 try:
     my_items = load_from_json_file(filename)
-
 except FileNotFoundError:
     my_items = []
+
 for i in range(1, len(argv)):
     my_items.append(argv[i])
 
