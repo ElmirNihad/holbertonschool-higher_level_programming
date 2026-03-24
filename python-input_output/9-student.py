@@ -1,20 +1,16 @@
 #!/usr/bin/python3
-"""Write a script that adds all arguments to a Python list, and then save
-   them to a file:
-        *If the file doesnt exist, it should be created
-"""
-from sys import argv
-from os import path
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+"""Student class definition"""
 
-filename = "add_item.json"
-try:
-    my_items = load_from_json_file(filename)
+class Student:
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-except FileNotFoundError:
-    my_items = []
-for i in range(1, len(argv)):
-    my_items.append(argv[i])
-
-save_to_json_file(my_items, filename)
+    def to_json(self):
+        """Return dictionary representation of Student instance"""
+        return {
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'age': self.age
+        }
